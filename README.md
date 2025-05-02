@@ -6,32 +6,6 @@ La secuencia de estudio de de las prácticas está dada por el número en el nom
 
 NOTA: Para trabajar en un proyecto se debe abrir Visual Studio Code en el directorio correspondiente.
 
-## Estructura básica de un proyecto
-
-La mayoría de proyectos tienen la siguiente estructura:
-
-- README.md: Descripción del proyecto e instrucciones específicas para compilar/ejecutar.
-- Directorio *include*, contiene definiciones de:
-  - Encabezados de lenguaje C/C++ con extensión .h.
-  - Encabezados de lenguaje C/C++ para CUDA con extensión .cuh.
-- Directorio *src*, contiene definiciones de:
-  - Código en lenguaje C/C++ con extensión .c o .cpp.
-  - Código en lenguaje C/C++ para CUDA con extensión .cu.
-- Archivo CMakeLists.txt: Archivo que contiene la configuración de cmake, que permite automatizar
-  la creación de los proyectos para diferentes plataformas y entornos de desarrollo.
-
-## Definiciones para código C/C++ o CUDA
-
-Tanto en los archivos de encabezado (.cuh) y de código fuente (.cu), se deben incluir los
-atributos adecuados a la definicióm de las funciones, de acuerdo con lo establecido en la
-documentación oficial de CUDA.
-
-La declaración y la definición de las funciones deben incluir una de las siguientes clave:
-    - __host__: Código que se ejecuta en la CPU.
-    - __global__: Código que se ejecuta en la GPU pero es invocado desde la CPU.
-    - __device__: Código que se ejecuta en la GPU y es invocado por otro código en la GPU.
-el proceso de compilación.
-
 ## Requisitos de software
 
 En sistemas Windows:
@@ -47,6 +21,56 @@ En sistemas GNU/Linux:
 
 - [NVIDIA CUDA Toolkit](https://developer.nvidia.com/cuda-toolkit)
 - [Visual Studio Code](https://code.visualstudio.com/)
+
+## Estructura básica de un proyecto
+
+La mayoría de proyectos tienen la siguiente estructura:
+
+- README.md: Descripción del proyecto e instrucciones específicas para compilar/ejecutar.
+- Directorio *include*, contiene definiciones de:
+  - Encabezados de lenguaje C/C++ con extensión .h.
+  - Encabezados de lenguaje C/C++ para CUDA con extensión .cuh.
+- Directorio *src*, contiene definiciones de:
+  - Código en lenguaje C/C++ con extensión .c o .cpp.
+  - Código en lenguaje C/C++ para CUDA con extensión .cu.
+- Archivo CMakeLists.txt: Archivo que contiene la configuración de cmake, que permite automatizar
+  la creación de los proyectos para diferentes plataformas y entornos de desarrollo.
+
+
+## Compilar y ejecutar
+
+Para compilar este proyecto, abrir en Visual Studio Code y usar el botón con el ícono "Play"
+que se encuentra en la barra de acciones en el borde inferior del entorno.
+
+
+## Compilar manualmente
+
+Para compilar manualmente, se debe abrir una nueva terminal y ejecutar el siguiente comando:
+
+```sh
+cmake --build .
+```
+
+
+## Limpiar la compilación
+
+Para eliminar archivos ejecutables y de depuración, se debe abrir una nueva terminal y ejecutar el siguiente comando:
+
+```sh
+cmake --build . --target clean
+```
+
+## Definiciones para código C/C++ o CUDA
+
+Tanto en los archivos de encabezado (.cuh) y de código fuente (.cu), se deben incluir los
+atributos adecuados a la definicióm de las funciones, de acuerdo con lo establecido en la
+documentación oficial de CUDA.
+
+La declaración y la definición de las funciones deben incluir una de las siguientes clave:
+    - __host__: Código que se ejecuta en la CPU.
+    - __global__: Código que se ejecuta en la GPU pero es invocado desde la CPU.
+    - __device__: Código que se ejecuta en la GPU y es invocado por otro código en la GPU.
+el proceso de compilación.
 
 ## Referencias
 

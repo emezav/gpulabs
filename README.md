@@ -4,6 +4,8 @@ Ejemplos para el aprendizaje de Programación en Paralelo usando CUDA
 
 La secuencia de estudio de de las prácticas está dada por el número en el nombre del directorio.
 
+NOTA: Para trabajar en un proyecto se debe abrir Visual Studio Code en el directorio correspondiente.
+
 ## Estructura básica de un proyecto
 
 La mayoría de proyectos tienen la siguiente estructura:
@@ -14,6 +16,7 @@ La mayoría de proyectos tienen la siguiente estructura:
   - Encabezados de lenguaje C/C++ para CUDA con extensión .cuh.
 - Directorio *src*, contiene definiciones de:
   - Código en lenguaje C/C++ con extensión .c o .cpp.
+  - Código en lenguaje C/C++ para CUDA con extensión .cu.
 - Archivo CMakeLists.txt: Archivo que contiene la configuración de cmake, que permite automatizar
   la creación de los proyectos para diferentes plataformas y entornos de desarrollo.
 
@@ -37,7 +40,8 @@ En sistemas Windows:
 - [w64devkit](https://github.com/skeeto/w64devkit) Entorno de desarrollo para C/C++. Incluye algunas herramientas requeridas
   para realizar los procesos de compilación.
 - [Visual Studio Community](https://visualstudio.microsoft.com/es/vs/community/)
-- [Visual Studio Code](https://code.visualstudio.com/)
+- [Visual Studio Code](https://code.visualstudio.com/). Se debe instalar el meta paquete C/C++ Extension Pack de Microsoft,
+  que incluye algunas extensiones necesarias para desarrollar en C/C++ y usar CMake.
 
 En sistemas GNU/Linux:
 

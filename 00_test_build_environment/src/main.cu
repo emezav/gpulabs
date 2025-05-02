@@ -1,6 +1,6 @@
 /**
  * @file
- * @author Erwin Meza Vega <emezav@unicauca.edu.co>
+ * @author Erwin Meza Vega <emezav@(unicauca.edu.co|gmail.com)>
  * @brief Test build environment
  * @version 1.0
  * @date 2025-03-15

@@ -48,6 +48,7 @@ que se encuentra en la barra de acciones en el borde inferior del entorno.
 Para compilar manualmente, se debe abrir una nueva terminal y ejecutar el siguiente comando:
 
 ```sh
+cd build
 cmake --build . --config Debug
 ```
 
@@ -56,6 +57,7 @@ cmake --build . --config Debug
 Para compilar manualmente, se debe abrir una nueva terminal y ejecutar el siguiente comando:
 
 ```sh
+cd build
 cmake --build . --config Release
 ```
 
@@ -64,6 +66,7 @@ cmake --build . --config Release
 Para eliminar archivos ejecutables y de depuración, se debe abrir una nueva terminal y ejecutar el siguiente comando:
 
 ```sh
+cd build
 cmake --build . --target clean
 ```
 

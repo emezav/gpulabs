@@ -16,7 +16,7 @@ project(${ProjectName})
 
 # To use a custom project name:
 # comment the project(...) line before this comment,
-# replase MYPROJECT with the desired project name and uncomment the following line:
+# replace MYPROJECT with the desired project name and uncomment the following line:
 #project("MYPROJECT")
 
 # Enable CUDA
@@ -37,9 +37,6 @@ file(GLOB gpu_source_files "${CMAKE_SOURCE_DIR}/src/*.cu" "${CMAKE_SOURCE_DIR}/i
 include_directories(${CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES})
 
 add_executable (${PROJECT_NAME} ${cpu_source_files} ${gpu_source_files})
-
-# Set CUDA architecture to native (use host architecture )
-#set_property(GLOBAL PROPERTY CUDA_ARCHITECTURES native)
 
 # Set default start project
 set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME})

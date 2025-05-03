@@ -34,6 +34,10 @@ file(GLOB cpu_source_files "${CMAKE_SOURCE_DIR}/src/*.cpp" "${CMAKE_SOURCE_DIR}/
 # Add CUDA headers and sources
 file(GLOB gpu_source_files "${CMAKE_SOURCE_DIR}/src/*.cu" "${CMAKE_SOURCE_DIR}/include/*.cuh")
 
+# Add include directory "./include"
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
+# Add include directory for the CUDA include directories
 include_directories(${CMAKE_CUDA_TOOLKIT_INCLUDE_DIRECTORIES})
 
 add_executable (${PROJECT_NAME} ${cpu_source_files} ${gpu_source_files})
@@ -46,4 +50,3 @@ set_property(TARGET ${PROJECT_NAME} PROPERTY LINK_FLAGS ${PROJ_LINK_FLAGS})
 
 # Set CUDA architecture to native (use host architecture) on current project
 set_property(TARGET ${PROJECT_NAME} PROPERTY CUDA_ARCHITECTURES native)
-

@@ -1,6 +1,6 @@
-# Learning Parallel Programming with CUDA
+# Learning Parallel GPU computing
 
-Ejemplos para el aprendizaje de Programación en Paralelo usando CUDA
+Ejemplos para el aprendizaje de Programación paralela en GPU
 
 La secuencia de estudio de de las prácticas está dada por el número en el nombre del directorio.
 
@@ -26,37 +26,61 @@ En sistemas GNU/Linux:
 
 La mayoría de proyectos tienen la siguiente estructura:
 
-- README.md: Descripción del proyecto e instrucciones específicas para compilar/ejecutar.
+```t
+include/        # Cabeceras (.h, .cuh)
+src/            # Código fuente (.cpp, .cu)
+build/          # Directorio generado por CMake
+CMakeLists.txt
+.gitignore
+Makefile
+README.md
+```
+
 - Directorio *include*, contiene definiciones de:
   - Encabezados de lenguaje C/C++ con extensión .h.
   - Encabezados de lenguaje C/C++ para CUDA con extensión .cuh.
 - Directorio *src*, contiene definiciones de:
   - Código en lenguaje C/C++ con extensión .c o .cpp.
   - Código en lenguaje C/C++ para CUDA con extensión .cu.
-- Archivo CMakeLists.txt: Archivo que contiene la configuración de cmake, que permite automatizar
-  la creación de los proyectos para diferentes plataformas y entornos de desarrollo.
-
+- Archivo CMakeLists.txt: Archivo que contiene la configuración de cmake,
+    que permite automatizar   la creación de los proyectos para diferentes
+    plataformas y entornos de desarrollo.
+- Archivo .gitignore: Contiene los patrones de archivos/directorios que no
+    se publican en el reposoitorio git.
+- Archivo Makefile: Permite automatizar las tareas de compilación desde la
+    línea de comandos.
+- README.md: Descripción del proyecto e instrucciones específicas para
+    compilar/ejecutar.
 
 ## Compilar y ejecutar
 
 Para compilar este proyecto, abrir en Visual Studio Code y usar el botón con el ícono "Play"
 que se encuentra en la barra de acciones en el borde inferior del entorno.
 
+También se proporciona un Makefile, que permite realizar las tareas básicas de compilación.
 
-## Compilar manualmente (Debug)
+Desde la raíz del proyecto:
+
+```bash
+make clean
+make
+make run
+```
+
+## Compilar manualmente - CMake (Debug)
 
 Para compilar manualmente, se debe abrir una nueva terminal y ejecutar el siguiente comando:
 
-```sh
+```bash
 cd build
 cmake --build . --config Debug
 ```
 
-## Compilar manualmente (Release)
+## Compilar manualmente CMake (Release)
 
 Para compilar manualmente, se debe abrir una nueva terminal y ejecutar el siguiente comando:
 
-```sh
+```bash
 cd build
 cmake --build . --config Release
 ```
@@ -65,7 +89,7 @@ cmake --build . --config Release
 
 Para eliminar archivos ejecutables y de depuración, se debe abrir una nueva terminal y ejecutar el siguiente comando:
 
-```sh
+```bash
 cd build
 cmake --build . --target clean
 ```
@@ -92,3 +116,20 @@ el proceso de compilación.
 - [W64DevKit - Portable C, C++, and Fortran Development Kit for x64 and x86 Windows](https://github.com/skeeto/w64devkit)
 - [CMake - Build your world](https://cmake.org/)
 - [CMake vs. Make: What's the Difference?](https://earthly.dev/blog/cmake-vs-make-diff/)
+
+## Whitepapers de arquitecturas NVIDIA
+
+- [NVIDIA Technologies](https://www.nvidia.com/en-us/technologies/)
+- [WOLF Advanced Technology - NVIDIA GPU Architecture:
+  From Turing to Blackwell](https://wolfadvancedtechnology.com/wp-content/uploads/2025/11/WOLF-NVIDIA-GPUTuring-to-Blackwell.pdf)
+- [NVIDIA Blackwell](https://images.nvidia.com/aem-dam/Solutions/geforce/blackwell/nvidia-rtx-blackwell-gpu-architecture.pdf)
+- [NVIDIA Ada](https://images.nvidia.com/aem-dam/Solutions/geforce/ada/nvidia-ada-gpu-architecture.pdf)
+- [NVIDIA Ampere](https://www.nvidia.com/content/PDF/nvidia-ampere-ga-102-gpu-architecture-whitepaper-v2.pdf)
+- [NVIDIA Turing](https://images.nvidia.com/aem-dam/en-zz/Solutions/design-visualization/technologies/turing-architecture/NVIDIA-Turing-Architecture-Whitepaper.pdf)
+
+## Aviso de responsabilidad / disclaimer
+
+El código de este repositorio se creó a partir del estudio y la experiencia obtenidas en programación de la GPU usando CUDA. Cualquier similitud con código existente es completamente circunstancial. Este código se proporcion TAL CUAL, sin ninguna garantía. Use el código bajo su entera responsabilidad. Las marcas comerciales mencionadas en este repositorio son propiedad de sus respectivos titulares.
+
+The code in this repository was created from study and experience gained in GPU programming using CUDA. Any similarity to existing code is completely circumstantial. This code is provided AS IS, without any warranty. Use the code at your own risk.
+Trademarks mentioned in this repository are the property of their respective owners.

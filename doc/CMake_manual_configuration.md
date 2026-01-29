@@ -10,27 +10,22 @@ Para compilar y ejecutar el código dentro de este proyecto, se debe realizar la
 Linux:
 
 ```sh
-mkdir mingw-x64
-cd mingw-x64
-cmake -G "MinGW Makefiles" ..
+mkdir build
+cd build
+cmake -G "Unix Makefiles" ..
 ```
 
-Para compilar el proyecto, se usa el comando"
-
-```sh
-cd mingw-x64
-make
-```
-
-## Generar el proyecto y la solución para Visual Studio
-
-Para generar la configuración de Visual Studio 2022, se debe crear un directorio y generar los archivos de Visual Studio usando el CMakeLists.txt:
+Windows:
+Para generar la configuración de Visual Studio 2022, se debe generar los archivos de Visual Studio usando el CMakeLists.txt:
 
 ```sh
 mkdir build
 cd build
 cmake -G "Visual Studio 17 2022" -A x64 ..
 ```
+
+Es importante considerar que muchas bibliotecas se encuentran optimizadas o sólo tienen soporte para 64 bits, por lo cual es
+conveniente adicionar la opción -A x64 para crear una conviguración destinada a este tipo de sistemas.
 
 ### Compilar usando Visual Studio
 
@@ -43,15 +38,13 @@ Para compilar por línea de comandos: se debe entrar al directorio que contiene 
 Versión Debug:
 
 ```sh
-cd build
-cmake --build . --config Debug
+cmake --build build --config Debug
 ```
 
 Versión Release:
 
 ```sh
-cd build
-cmake --build . --config Release
+cmake --build build --config Release
 ```
 
 ### Limpiar los archivos de compilación
@@ -59,15 +52,13 @@ cmake --build . --config Release
 Limpiar los archivos de Release:
 
 ```sh
-cd build
-cmake --build . --config Release --target clean
+cmake --build build --config Release --target clean
 ```
 
 Limpiar los archivos de Debug:
 
 ```sh
-cd build
-cmake --build . --config Debug --target clean
+cmake --build build --config Debug --target clean
 ```
 
 ## Referencias

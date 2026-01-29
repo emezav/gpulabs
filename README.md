@@ -129,7 +129,7 @@ el proceso de compilación.
 
 ## Aviso de responsabilidad / disclaimer
 
-El código de este repositorio se creó a partir del estudio y la experiencia obtenidas en programación de la GPU usando CUDA. Cualquier similitud con código existente es completamente circunstancial. Este código se proporcion TAL CUAL, sin ninguna garantía. Use el código bajo su entera responsabilidad. Las marcas comerciales mencionadas en este repositorio son propiedad de sus respectivos titulares.
+El código de este repositorio se creó a partir del estudio y la experiencia obtenidas en programación de la GPU usando CUDA. Cualquier similitud con código existente es completamente circunstancial. Este código se proporciona TAL CUAL, sin ninguna garantía. Use el código bajo su entera responsabilidad. Las marcas comerciales mencionadas en este repositorio son propiedad de sus respectivos titulares.
 
 The code in this repository was created from study and experience gained in GPU programming using CUDA. Any similarity to existing code is completely circumstantial. This code is provided AS IS, without any warranty. Use the code at your own risk.
 Trademarks mentioned in this repository are the property of their respective owners.
